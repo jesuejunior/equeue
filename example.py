@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import threading, logging, time
 import json
-from rabbit.publisher import Publisher
-from rabbit.subscriber import Subscriber
+from equeue.rabbit.publisher import Publisher
+from equeue.rabbit.subscriber import Subscriber
 
 def events_out(callback, message, delivery_tag):
     print('This a full message', message)

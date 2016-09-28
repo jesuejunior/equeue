@@ -3,13 +3,19 @@ Elastic Queue is a library to bear a PubSub projects
 
 ### How to use it
 
+Install via PIP
+
+```shell
+    $ pip install equeue
+```
+
 #### Producing
 
 Using ipython
 
 ```python
 
-    In [1]: from rabbit.publisher import Publisher
+    In [1]: from equeue.rabbit.publisher import Publisher
 
     In [2]: pub = Publisher(host='localhost', username='guest', password='guest', queue_name='t')
 
@@ -24,7 +30,7 @@ Using ipython
 
 ```python
 
-    In [1]: from rabbit.subscriber import Subscriber
+    In [1]: from equeue.rabbit.subscriber import Subscriber
 
     In [2]: sub = Subscriber(host='localhost', username='guest', password='guest', queue_name='t')
 
@@ -41,7 +47,7 @@ Creating a main.py you'd see better.
 
 ```python
 
-    from rabbit.subscriber import Subscriber
+    from equeue.rabbit.subscriber import Subscriber
 
     def events_out(callback, message, delivery_tag):
         print(message)
@@ -66,3 +72,12 @@ Then
 ```shell
     $ python main.py
 ``` 
+
+### Developing mode
+
+Run tests
+
+```shell
+    $ py.test
+```
+
