@@ -75,9 +75,17 @@ Then
 
 ### Developing mode
 
-Run tests
+Running tests
+
+To run the project's test you will need to have pytest installed. The instalation is simple as :
 
 ```shell
-    $ py.test
+$ pip install pytest
+```
+
+And to run the tests you need to ajust yout `PYTHONPATH`
+
+```shell
+    $ PYTHONPATH=equeue py.test
 ```
 
