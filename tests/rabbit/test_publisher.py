@@ -1,12 +1,13 @@
-from datetime import datetime
-import json
+#encoding: utf-8
 import unittest
+from datetime import datetime
 
+import simplejson as json
 from amqp import Message, AMQPError, ConnectionError
 from mock import MagicMock, patch, call, Mock, ANY
 
-from rabbit.queue import SerializationError
-from rabbit.publisher import Publisher
+from equeue.rabbit.queue import SerializationError
+from equeue.rabbit.publisher import Publisher
 
 
 class RabbitQueueTest(unittest.TestCase):
@@ -44,7 +45,7 @@ class RabbitQueueTest(unittest.TestCase):
 
     def test_put_serializes_message_if_necessary(self):
         message = {'key': 'value'}
-        with patch('rabbit.publisher.Publisher') as MockPublisher:
+        with patch('equeue.rabbit.publisher.Publisher') as MockPublisher:
             self.publisher.put(message_dict=message)
 
         self.assertEqual(MockPublisher.call_args_list,
