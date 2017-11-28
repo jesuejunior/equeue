@@ -1,10 +1,10 @@
-from datetime import datetime
 import time
 import uuid
+from datetime import datetime
 
+import simplejson as json
 import amqp
 from amqp import Message, AMQPError, ConnectionError as AMQPConnectionError
-import simplejson as json
 
 MAX_TRIES = 3
 META_FIELD = "_meta"

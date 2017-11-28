@@ -1,6 +1,6 @@
 # enconding: utf-8
 import time
-from rabbit.queue import RabbitQueue
+from equeue.rabbit.queue import RabbitQueue
 
 
 class Subscriber(RabbitQueue):

@@ -1,7 +1,7 @@
 # encondign: utf-8
 import simplejson as json
 from amqp import Message
-from rabbit.queue import RabbitQueue, SerializationError
+from equeue.rabbit.queue import RabbitQueue, SerializationError
 
 
 class Publisher(RabbitQueue):
