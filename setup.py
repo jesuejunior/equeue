@@ -18,8 +18,8 @@ setup(
     packages=find_packages(),
     install_requires=['amqp==2.1.0', 'simplejson>=3.8.2', 'six==1.10.0'],
     test_suite='tests',
-    tests_require=['tox>=2.3.1'] + (
-        ['mock==1.3.0'] if sys.version_info.major == 2 else []
+    tests_require=['tox>=2.3.1', 'pytest==3.0.3', 'pytest-cov==2.3.1'] + (
+        ['mock==2.0.0'] if sys.version_info.major == 2 else []
     ),
     classifiers=[
         'Intended Audience :: Developers',
