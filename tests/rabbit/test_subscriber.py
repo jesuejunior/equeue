@@ -5,7 +5,7 @@ import unittest
 from amqp import Message, AMQPError, ConnectionError
 from mock import MagicMock, patch, call, Mock, ANY
 
-from rabbit.subscriber import Subscriber
+from equeue.rabbit.subscriber import Subscriber
 
 
 class SubscriberTest(unittest.TestCase):
@@ -47,7 +47,7 @@ class SubscriberTest(unittest.TestCase):
         empty_rv = None
         self.channel_mock.basic_get.side_effect = [empty_rv, empty_rv, self.message]
         with patch('time.sleep') as sleep,\
-                patch('rabbit.queue.RabbitQueue._parse_message') as parse_message_mock:
+                patch('equeue.rabbit.queue.RabbitQueue._parse_message') as parse_message_mock:
             message = self.subscriber.get(queue_name='queue_name')
 
             self.assertEqual(message, parse_message_mock.return_value)

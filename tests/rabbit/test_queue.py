@@ -1,13 +1,14 @@
-from datetime import datetime
-import json
+#encoding: utf-8
 import unittest
+from datetime import datetime
 
+import simplejson as json
 from amqp import Message, AMQPError, ConnectionError
 from mock import MagicMock, patch, call, Mock, ANY
 
-from rabbit.queue import (RabbitQueue, MAX_TRIES, SerializationError, META_FIELD)
+from equeue.rabbit.queue import (RabbitQueue, MAX_TRIES, SerializationError, META_FIELD)
 
-MODULE = 'rabbit.queue.'
+MODULE = 'equeue.rabbit.queue.'
 
 
 class RabbitQueueTest(unittest.TestCase):
